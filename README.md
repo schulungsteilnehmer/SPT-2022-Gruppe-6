@@ -1,1 +1,1 @@
-# SPT-2022-Gruppe-6
+# Team alpha 
