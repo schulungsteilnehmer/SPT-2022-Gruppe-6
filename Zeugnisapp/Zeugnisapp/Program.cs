@@ -50,7 +50,7 @@ namespace Zeugnisapp
 			Console.Write("Name(Vor- und Nachname): ");
 			Name = Console.ReadLine();
 			
-			Console.Write("Datum: ");
+			Console.Write("Datum (dd.mm.yyyy): ");
 			Datum = Console.ReadLine();
 			
 			Console.Write("Klasse: ");
@@ -63,26 +63,13 @@ namespace Zeugnisapp
 			Console.Write("Davon endschuldigt: ");
 			entschuldigteFehltage = Convert.ToInt32(Console.ReadLine());
 			
-			unentschuldigteFehltage = Fehltage - entschuldigteFehltage; 
-		    if(unentschuldigteFehltage > 29)
-		    {
-		    	Versetzung = true; 
-		    	
-		    Console.Write(" Der Schüler wird nicht versetzt");
-			
-		    }
-			else 
-			
-			{
-				Console.Write(" Der Schüler wird versetzt");
-			}
-			
-			Console.Write("Davon unentschuldigte: {0}",unentschuldigteFehltage);
 			
 			
 			
 			
-			Console.Write("Leistungskurs1: ");
+			
+			
+			Console.Write("\nLeistungskurs1: ");
 			Leistungskurs1 = Console.ReadLine();
 			Console.Write("PunkteLK1(0-15Punkte): ");
 			PunkteLk1 = Convert.ToInt32(Console.ReadLine());
@@ -127,30 +114,67 @@ namespace Zeugnisapp
 		
 			
 			
-			Note[0] = ((17 - PunkteLk1) / 3);
-			Note[1] = ((17 - PunkteLk1) / 3);
+			Note[0] = ((17 - (double)PunkteLk1) / 3);
+			Note[1] = ((17 - (double)PunkteLk1) / 3);
 			
-			Note[2] = ((17 - PunkteLk2) / 3);
-			Note[3] = ((17 - PunkteLk2) / 3);
+			Note[2] = ((17 - (double)PunkteLk2) / 3);
+			Note[3] = ((17 - (double)PunkteLk2) / 3);
 			
-			Note[4] = ((17 - PunkteG1) / 3);
-			Note[5] = ((17 - PunkteG2) / 3);
+			Note[4] = ((17 - (double)PunkteG1) / 3);
+			Note[5] = ((17 - (double)PunkteG2) / 3);
 			
-			Note[6] = ((17 - PunkteG3) / 3);
-			Note[7] = ((17 - PunkteG4) / 3);
+			Note[6] = ((17 - (double)PunkteG3) / 3);
+			Note[7] = ((17 - (double)PunkteG4) / 3);
 			
-			Note[8] = ((17 - PunkteG5) / 3);
-			Note[9] = ((17 - PunkteG6) / 3);
+			Note[8] = ((17 - (double)PunkteG5) / 3);
+			Note[9] = ((17 - (double)PunkteG6) / 3);
 			
 			for (int i = 0; i <= 9; i++) {
 				Endnote += Note[i]; 
 				
 				
 			}
+			
 			Endnote = Endnote / 10;
 		    Console.Write(Endnote);
 		    
 		    
+		    unentschuldigteFehltage = Fehltage - entschuldigteFehltage; 
+		    
+			
+		    Console.Write("\nUnentschuldigte Fehltage: {0}",unentschuldigteFehltage);
+		    
+		    Console.Clear();
+		    Console.WriteLine("Name: {0} Datum: {1} Klasse: {2} ", Name, Datum, Klasse);
+		    Console.WriteLine(" {0}: {1:F1} ", Leistungskurs1, Note[0]);
+		    Console.WriteLine(" {0}: {1:F1} ", Leistungskurs2, Note[2]);
+		    Console.WriteLine(" {0}: {1:F1} ", Grundkurs1, Note[4]);
+		    Console.WriteLine(" {0}: {1:F1} ", Grundkurs2, Note[5]);
+		    Console.WriteLine(" {0}: {1:F1} ", Grundkurs3, Note[6]);
+		    Console.WriteLine(" {0}: {1:F1} ", Grundkurs4, Note[7]);
+		    Console.WriteLine(" {0}: {1:F1} ", Grundkurs5, Note[8]);
+		    Console.WriteLine(" {0}: {1:F1} ", Grundkurs6, Note[9]);
+		    Console.WriteLine("Fehltage: {0} ", Fehltage);
+		    Console.WriteLine("unentschuldigte Fehltage: {0}: entschuldigte Fehltage {1} ", unentschuldigteFehltage, entschuldigteFehltage);
+		    Console.WriteLine("Durchschnitt: {0:F1} ", Endnote);
+		    if(unentschuldigteFehltage > 29)
+		    {
+		    	Versetzung = true; 
+		    	
+		    Console.Write(" \nDer Schüler wird nicht versetzt");
+			
+		    }
+			else 
+			
+			{
+				Console.Write(" \nDer Schüler wird versetzt");
+			}
+		    
+		    
+		    
+		    
+		    
+		    	
 		    	
 		    
 	
