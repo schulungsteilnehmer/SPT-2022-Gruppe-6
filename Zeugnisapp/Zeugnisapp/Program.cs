@@ -21,7 +21,10 @@ namespace Zeugnisapp
 			string Leistungskurs1;
 			string Leistungskurs2;
 			string Datum;
-			string Name; 
+			string Name;
+			int Fehltage;
+			int entschuldigteFehltage;
+			int  unentschuldigteFehltage;
 			string Klasse; 
 			string Grundkurs1;
 			string Grundkurs2;
@@ -39,6 +42,8 @@ namespace Zeugnisapp
 			int PunkteG6;
 			double [] Note = new double[10];
 			double Endnote;
+			bool Versetzung = false;
+			unentschuldigteFehltage = 0;
 			Endnote = 0;
 				
 			
@@ -50,6 +55,31 @@ namespace Zeugnisapp
 			
 			Console.Write("Klasse: ");
 			Klasse = Console.ReadLine();
+			
+			Console.Write("Fehltage: ");
+			Fehltage = Convert.ToInt32(Console.ReadLine());
+			
+			
+			Console.Write("Davon endschuldigt: ");
+			entschuldigteFehltage = Convert.ToInt32(Console.ReadLine());
+			
+			unentschuldigteFehltage = Fehltage - entschuldigteFehltage; 
+		    if(unentschuldigteFehltage > 29)
+		    {
+		    	Versetzung = true; 
+		    	
+		    Console.Write(" Der Schüler wird nicht versetzt");
+			
+		    }
+			else 
+			
+			{
+				Console.Write(" Der Schüler wird versetzt");
+			}
+			
+			Console.Write("Davon unentschuldigte: {0}",unentschuldigteFehltage);
+			
+			
 			
 			
 			Console.Write("Leistungskurs1: ");
@@ -119,7 +149,11 @@ namespace Zeugnisapp
 			}
 			Endnote = Endnote / 10;
 		    Console.Write(Endnote);
-			
+		    
+		    
+		    	
+		    
+	
 			
 			
 			
