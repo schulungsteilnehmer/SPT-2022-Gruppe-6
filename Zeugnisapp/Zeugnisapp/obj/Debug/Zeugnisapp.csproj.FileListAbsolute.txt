@@ -1,0 +1,6 @@
+C:\Users\schulung.SCHULUNGNB-03\Documents\Zeugnissoftware\Zeugnisapp\Zeugnisapp\bin\Debug\Zeugnisapp.exe.config
+C:\Users\schulung.SCHULUNGNB-03\Documents\Zeugnissoftware\Zeugnisapp\Zeugnisapp\bin\Debug\Zeugnisapp.exe
+C:\Users\schulung.SCHULUNGNB-03\Documents\Zeugnissoftware\Zeugnisapp\Zeugnisapp\bin\Debug\Zeugnisapp.pdb
+C:\Users\schulung.SCHULUNGNB-03\Documents\Zeugnissoftware\Zeugnisapp\Zeugnisapp\obj\Debug\Zeugnisapp.csprojResolveAssemblyReference.cache
+C:\Users\schulung.SCHULUNGNB-03\Documents\Zeugnissoftware\Zeugnisapp\Zeugnisapp\obj\Debug\Zeugnisapp.exe
+C:\Users\schulung.SCHULUNGNB-03\Documents\Zeugnissoftware\Zeugnisapp\Zeugnisapp\obj\Debug\Zeugnisapp.pdb
