@@ -10,6 +10,7 @@ using System;
 
 namespace Zeugnisapp
 {
+	
 	class Program
 	{
 		public static void Main(string[] args)
@@ -40,9 +41,9 @@ namespace Zeugnisapp
 			int PunkteG4;
 			int PunkteG5;
 			int PunkteG6;
+			int Counter = 0;
 			double [] Note = new double[10];
 			double Endnote;
-			bool Versetzung = false;
 			unentschuldigteFehltage = 0;
 			Endnote = 0;
 				
@@ -60,7 +61,7 @@ namespace Zeugnisapp
 			Fehltage = Convert.ToInt32(Console.ReadLine());
 			
 			
-			Console.Write("Davon endschuldigt: ");
+			Console.Write("Davon entschuldigt: ");
 			entschuldigteFehltage = Convert.ToInt32(Console.ReadLine());
 			
 			
@@ -115,19 +116,19 @@ namespace Zeugnisapp
 			
 			
 			Note[0] = ((17 - (double)PunkteLk1) / 3);
-			Note[1] = ((17 - (double)PunkteLk1) / 3);
+			Note[8] = ((17 - (double)PunkteLk1) / 3);
 			
-			Note[2] = ((17 - (double)PunkteLk2) / 3);
-			Note[3] = ((17 - (double)PunkteLk2) / 3);
+			Note[1] = ((17 - (double)PunkteLk2) / 3);
+			Note[9] = ((17 - (double)PunkteLk2) / 3);
 			
-			Note[4] = ((17 - (double)PunkteG1) / 3);
-			Note[5] = ((17 - (double)PunkteG2) / 3);
+			Note[2] = ((17 - (double)PunkteG1) / 3);
+			Note[3] = ((17 - (double)PunkteG2) / 3);
 			
-			Note[6] = ((17 - (double)PunkteG3) / 3);
-			Note[7] = ((17 - (double)PunkteG4) / 3);
+			Note[4] = ((17 - (double)PunkteG3) / 3);
+			Note[5] = ((17 - (double)PunkteG4) / 3);
 			
-			Note[8] = ((17 - (double)PunkteG5) / 3);
-			Note[9] = ((17 - (double)PunkteG6) / 3);
+			Note[6] = ((17 - (double)PunkteG5) / 3);
+			Note[7] = ((17 - (double)PunkteG6) / 3);
 			
 			for (int i = 0; i <= 9; i++) {
 				Endnote += Note[i]; 
@@ -157,9 +158,24 @@ namespace Zeugnisapp
 		    Console.WriteLine("Fehltage: {0} ", Fehltage);
 		    Console.WriteLine("unentschuldigte Fehltage: {0}: entschuldigte Fehltage {1} ", unentschuldigteFehltage, entschuldigteFehltage);
 		    Console.WriteLine("Durchschnitt: {0:F1} ", Endnote);
-		    if(unentschuldigteFehltage > 29)
+		    Console.WriteLine(" Wollen Sie eine Textdatei empfangen? (Ja oder Nein):  ");
+			
+		    
+		    for (int i = 0; i <= 7 ; i++){
+				double Notenpunkte = 17 - (3*Note[i]);
+				if (Notenpunkte<5) {
+					Counter++;
+				
+				}  
+				
+				
+			}		   
+
+
+
+
+		    if(unentschuldigteFehltage > 29 || Counter > 2)
 		    {
-		    	Versetzung = true; 
 		    	
 		    Console.Write(" \nDer Schüler wird nicht versetzt");
 			
@@ -169,6 +185,11 @@ namespace Zeugnisapp
 			{
 				Console.Write(" \nDer Schüler wird versetzt");
 			}
+			
+			string fileName = @"C:\Users\schulung.SCHULUNGNB-03\Documents\Zeugnissoftware\Zeugnis.txtss";
+			StreamWriter writer = new StreamWriter(fileName); 
+			
+			
 		    
 		    
 		    
