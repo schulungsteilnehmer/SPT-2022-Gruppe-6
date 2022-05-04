@@ -160,6 +160,7 @@ namespace Zeugnisapp
 		    Console.WriteLine(" {0}: {1:F1} ", Grundkurs4, Note[7]);
 		    Console.WriteLine(" {0}: {1:F1} ", Grundkurs5, Note[8]);
 		    Console.WriteLine(" {0}: {1:F1} ", Grundkurs6, Note[9]);
+		    Console.WriteLine("========================");
 		    Console.WriteLine("Fehltage: {0} ", Fehltage);
 		    Console.WriteLine("unentschuldigte Fehltage: {0}: entschuldigte Fehltage {1} ", unentschuldigteFehltage, entschuldigteFehltage);
 		    Console.WriteLine("Durchschnitt: {0:F1} ", Endnote);
@@ -210,6 +211,7 @@ namespace Zeugnisapp
 		    writer.WriteLine(" {0}: {1:F1} ", Grundkurs4, Note[7]);
 		    writer.WriteLine(" {0}: {1:F1} ", Grundkurs5, Note[8]);
 		    writer.WriteLine(" {0}: {1:F1} ", Grundkurs6, Note[9]);
+		    writer.WriteLine("========================");
 		    writer.WriteLine("Fehltage: {0} ", Fehltage);
 		    writer.WriteLine("unentschuldigte Fehltage: {0}: entschuldigte Fehltage {1} ", unentschuldigteFehltage, entschuldigteFehltage);
 		    writer.WriteLine("Durchschnitt: {0:F1} ", Endnote);
