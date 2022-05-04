@@ -7,7 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
 using System;
-
+using System.IO;
 namespace Zeugnisapp
 {
 	
@@ -42,11 +42,15 @@ namespace Zeugnisapp
 			int PunkteG5;
 			int PunkteG6;
 			int Counter = 0;
+			string Txt;
 			double [] Note = new double[10];
 			double Endnote;
 			unentschuldigteFehltage = 0;
 			Endnote = 0;
 				
+			
+			
+			
 			
 			Console.Write("Name(Vor- und Nachname): ");
 			Name = Console.ReadLine();
@@ -146,9 +150,10 @@ namespace Zeugnisapp
 		    Console.Write("\nUnentschuldigte Fehltage: {0}",unentschuldigteFehltage);
 		    
 		    Console.Clear();
-		    Console.WriteLine("Name: {0} Datum: {1} Klasse: {2} ", Name, Datum, Klasse);
-		    Console.WriteLine(" {0}: {1:F1} ", Leistungskurs1, Note[0]);
-		    Console.WriteLine(" {0}: {1:F1} ", Leistungskurs2, Note[2]);
+		    Console.Write("=========Zeugnis========");
+		    Console.WriteLine("\nName: {0} Datum: {1} Klasse: {2} ", Name, Datum, Klasse);
+		    Console.WriteLine(" {0}(Leistungskurs 1): {1:F1} ", Leistungskurs1, Note[0]);
+		    Console.WriteLine(" {0}(Leistungskurs 2): {1:F1} ", Leistungskurs2, Note[2]);
 		    Console.WriteLine(" {0}: {1:F1} ", Grundkurs1, Note[4]);
 		    Console.WriteLine(" {0}: {1:F1} ", Grundkurs2, Note[5]);
 		    Console.WriteLine(" {0}: {1:F1} ", Grundkurs3, Note[6]);
@@ -158,7 +163,7 @@ namespace Zeugnisapp
 		    Console.WriteLine("Fehltage: {0} ", Fehltage);
 		    Console.WriteLine("unentschuldigte Fehltage: {0}: entschuldigte Fehltage {1} ", unentschuldigteFehltage, entschuldigteFehltage);
 		    Console.WriteLine("Durchschnitt: {0:F1} ", Endnote);
-		    Console.WriteLine(" Wollen Sie eine Textdatei empfangen? (Ja oder Nein):  ");
+		    
 			
 		    
 		    for (int i = 0; i <= 7 ; i++){
@@ -186,8 +191,47 @@ namespace Zeugnisapp
 				Console.Write(" \nDer Schüler wird versetzt");
 			}
 			
-			string fileName = @"C:\Users\schulung.SCHULUNGNB-03\Documents\Zeugnissoftware\Zeugnis.txtss";
+			
+			Console.ReadKey(true);
+		    Console.Clear();
+		    Console.WriteLine("Wollen Sie eine Textdatei empfangen? (Ja oder Nein):");
+		    Txt = Console.ReadLine();
+		    if (Txt == "Ja" || Txt == "ja"){
+		    	string fileName = @"C:\Users\schulung.SCHULUNGNB-03\Documents\Zeugnissoftware\Zeugnis.txt";
 			StreamWriter writer = new StreamWriter(fileName); 
+			
+			writer.Write("=========Zeugnis========");
+		    writer.WriteLine("\nName: {0} Datum: {1} Klasse: {2} ", Name, Datum, Klasse);
+		    writer.WriteLine(" {0}(Leistungskurs 1): {1:F1} ", Leistungskurs1, Note[0]);
+		    writer.WriteLine(" {0}(Leistungskurs 2): {1:F1} ", Leistungskurs2, Note[2]);
+		    writer.WriteLine(" {0}: {1:F1} ", Grundkurs1, Note[4]);
+		    writer.WriteLine(" {0}: {1:F1} ", Grundkurs2, Note[5]);
+		    writer.WriteLine(" {0}: {1:F1} ", Grundkurs3, Note[6]);
+		    writer.WriteLine(" {0}: {1:F1} ", Grundkurs4, Note[7]);
+		    writer.WriteLine(" {0}: {1:F1} ", Grundkurs5, Note[8]);
+		    writer.WriteLine(" {0}: {1:F1} ", Grundkurs6, Note[9]);
+		    writer.WriteLine("Fehltage: {0} ", Fehltage);
+		    writer.WriteLine("unentschuldigte Fehltage: {0}: entschuldigte Fehltage {1} ", unentschuldigteFehltage, entschuldigteFehltage);
+		    writer.WriteLine("Durchschnitt: {0:F1} ", Endnote);
+		    
+		    if(unentschuldigteFehltage > 29 || Counter > 2)
+		    {
+		    	
+		    writer.Write(" \nDer Schüler wird nicht versetzt");
+			
+		    }
+			else 
+			
+			{
+				writer.Write(" \nDer Schüler wird versetzt");
+			}
+			
+			writer.Close();
+		    }
+		    
+			
+			
+			
 			
 			
 		    

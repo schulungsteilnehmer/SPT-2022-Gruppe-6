@@ -1,0 +1,15 @@
+=========Zeugnis========
+Name: s Datum: s Klasse: s 
+ s(Leistungskurs 1): 5,0 
+ s(Leistungskurs 2): 3,0 
+ h: 3,0 
+ j: 3,0 
+ j: 3,0 
+ j: 3,0 
+ j: 5,0 
+ j: 5,0 
+Fehltage: 1 
+unentschuldigte Fehltage: 0: entschuldigte Fehltage 1 
+Durchschnitt: 3,8 
+ 
+Der Schüler wird versetzt
