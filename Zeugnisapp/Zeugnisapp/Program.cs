@@ -151,7 +151,7 @@ namespace Zeugnisapp
 		    
 		    Console.Clear();
 		    Console.Write("=========Zeugnis========");
-		    Console.WriteLine("\nName: {0} Datum: {1} Klasse: {2} ", Name, Datum, Klasse);
+		    Console.WriteLine("\nName: {0} \nDatum: {1} \nKlasse: {2} \n========================\n", Name, Datum, Klasse);
 		    Console.WriteLine(" {0}(Leistungskurs 1): {1:F1} ", Leistungskurs1, Note[0]);
 		    Console.WriteLine(" {0}(Leistungskurs 2): {1:F1} ", Leistungskurs2, Note[2]);
 		    Console.WriteLine(" {0}: {1:F1} ", Grundkurs1, Note[4]);
@@ -201,7 +201,7 @@ namespace Zeugnisapp
 			StreamWriter writer = new StreamWriter(fileName); 
 			
 			writer.Write("=========Zeugnis========");
-		    writer.WriteLine("\nName: {0} Datum: {1} Klasse: {2} ", Name, Datum, Klasse);
+		    writer.WriteLine("\nName: {0} \nDatum: {1} \nKlasse: {2} \n========================\n ", Name, Datum, Klasse);
 		    writer.WriteLine(" {0}(Leistungskurs 1): {1:F1} ", Leistungskurs1, Note[0]);
 		    writer.WriteLine(" {0}(Leistungskurs 2): {1:F1} ", Leistungskurs2, Note[2]);
 		    writer.WriteLine(" {0}: {1:F1} ", Grundkurs1, Note[4]);
